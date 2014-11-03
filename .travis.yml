@@ -9,10 +9,10 @@ env:
   - TRAVIS_BUILD_TYPE=Release
   
 before_script:
- # Install a recent CMake version
-- sudo add-apt-repository -y ppa:kalakris/cmake
-- sudo apt-get update
-- sudo apt-get install cmake
+  # Install a recent CMake version
+  - sudo add-apt-repository -y ppa:kalakris/cmake
+  - sudo apt-get update
+  - sudo apt-get install cmake
   # Install Eigen 3.0.5 
   - sudo apt-get install libeigen3-dev
   # Build and install YCM
