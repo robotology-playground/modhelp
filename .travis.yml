@@ -1,0 +1,30 @@
+language: cpp
+
+compiler:
+  - gcc
+  - clang
+
+env:
+  - TRAVIS_BUILD_TYPE=Debug
+  - TRAVIS_BUILD_TYPE=Release
+  
+before_script:
+  # Install Eigen 3.0.5 
+  - sudo apt-get install libeigen3-dev
+  # Build and install YCM
+  - git clone https://github.com/robotology/ycm.git
+  - cd ycm
+  - git checkout ycm-0.1
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make
+  - sudo make install
+  - cd ../..
+  # Run CMake
+  - mkdir build
+  - cd build
+  - cmake -DCREATE_TESTS:BOOL=ON -DCMAKE_CXX_FLAGS:STRING="-Wall" -DCMAKE_BUILD_TYPE=${TRAVIS_BUILD_TYPE} ..
+  
+
+script: make && make test
