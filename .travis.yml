@@ -15,10 +15,6 @@ before_script:
   - sudo apt-get install cmake
   # Install Eigen 3.0.5 
   - sudo apt-get install libeigen3-dev
-    #Eigen LGSM dep
-  - sudo add-apt-repository -y ppa:xde/dependencies
-  - sudo apt-get update
-  - sudo apt-get install libeigen3-lgsm-dev
   # Get YARP
   - sudo sh -c 'echo "deb http://www.icub.org/ubuntu $(lsb_release -cs) contrib/science" > /etc/apt/sources.list.d/icub.list'
   - sudo apt-get update
