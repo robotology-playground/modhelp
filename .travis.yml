@@ -16,7 +16,7 @@ before_script:
   # Install Eigen 3.0.5 
   - sudo apt-get install libeigen3-dev
     #Eigen LGSM dep
-  - sudo -E add-apt-repository ppa:xde/dependencies
+  - sudo add-apt-repository -y ppa:xde/dependencies
   - sudo apt-get update
   - sudo apt-get install libeigen3-lgsm-dev
   # Get YARP
