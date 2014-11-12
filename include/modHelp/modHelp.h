@@ -45,7 +45,7 @@
 #include <deque>
 #include <string>
 
-#include <Eigen/Lgsm>
+//#include <Eigen/Lgsm> //A.H: not mandatory and causes build issues
 #include <Eigen/StdVector> //Mandatory for vector fixed-size Eigen element (like Twistd)
                            //otherwise it raises assertion of bad alignement
 
