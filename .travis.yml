@@ -17,7 +17,8 @@ before_script:
   - sudo apt-get install libeigen3-dev
   # Get YARP
   - sudo sh -c 'echo "deb http://www.icub.org/ubuntu $(lsb_release -cs) contrib/science" > /etc/apt/sources.list.d/icub.list'
-  - sudo apt-get update && sudo apt-get install -qq yarp
+  - sudo apt-get update
+  - sudo apt-get install -qq yarp
   # Build and install YCM
   - git clone https://github.com/robotology/ycm.git
   - cd ycm
