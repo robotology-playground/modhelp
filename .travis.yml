@@ -33,6 +33,10 @@ before_script:
   - mkdir build
   - cd build
   - cmake -DCREATE_TESTS:BOOL=ON -DCMAKE_CXX_FLAGS:STRING="-Wall" -DCMAKE_BUILD_TYPE=${TRAVIS_BUILD_TYPE} ..
+  #Eigen LGSM dep
+  - sudo -E add-apt-repository ppa:xde/dependencies
+  - sudo apt-get update
+  - sudo apt-get install libeigen3-lgsm-dev
   
 
 script: make && make test
