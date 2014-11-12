@@ -6,6 +6,8 @@
 # Authors: Serena Ivaldi
 # CopyPolicy: Released under the terms of the GNU GPL v2.0 (or any later version).
 
+cmake_minimum_required(VERSION 2.8)
+
 SET(PROJECTNAME modHelp)
 
 PROJECT(${PROJECTNAME})
@@ -18,7 +20,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 set(${VARS_PREFIX}_MAJOR_VERSION 0)
 set(${VARS_PREFIX}_MINOR_VERSION 0)
-set(${VARS_PREFIX}_PATCH_VERSION 1)
+set(${VARS_PREFIX}_PATCH_VERSION 2)
 set(${VARS_PREFIX}_VERSION ${${VARS_PREFIX}_MAJOR_VERSION}.${${VARS_PREFIX}_MINOR_VERSION}.${${VARS_PREFIX}_PATCH_VERSION})
 
 find_package(YCM REQUIRED)
