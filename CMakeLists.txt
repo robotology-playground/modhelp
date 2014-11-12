@@ -26,8 +26,10 @@ include(YCMDefaultDirs)
 ycm_default_dirs(${VARS_PREFIX})
 
 find_package(YARP REQUIRED)
-find_package(Eigen3 REQUIRED)
-#find Eigen3 unsupported
+## Eigen LGSM
+find_package(PkgConfig REQUIRED)
+PKG_CHECK_MODULES(EIGEN eigen_lgsm REQUIRED)
+include_directories(${EIGEN_INCLUDE_DIRS})
 
 SET(folder_source src/modHelp.cpp)
 SET(folder_header include/modHelp/modHelp.h)
