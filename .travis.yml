@@ -15,6 +15,10 @@ before_script:
   - sudo apt-get install cmake
   # Install Eigen 3.0.5 
   - sudo apt-get install libeigen3-dev
+  # Get YARP/iCub
+  - sudo sh -c 'echo "deb http://www.icub.org/ubuntu $(lsb_release -cs) contrib/science" > /etc/apt/sources.list.d/icub.list'
+  - sudo apt-get update
+  - sudo apt-get install --yes --force-yes yarp icub
   # Build and install YCM
   - git clone https://github.com/robotology/ycm.git
   - cd ycm
@@ -29,6 +33,7 @@ before_script:
   - mkdir build
   - cd build
   - cmake -DCREATE_TESTS:BOOL=ON -DCMAKE_CXX_FLAGS:STRING="-Wall" -DCMAKE_BUILD_TYPE=${TRAVIS_BUILD_TYPE} ..
+
   
 
-script: make && make test
+script: make
