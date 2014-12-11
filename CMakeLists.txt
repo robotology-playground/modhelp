@@ -28,6 +28,7 @@ include(YCMDefaultDirs)
 ycm_default_dirs(${VARS_PREFIX})
 
 find_package(YARP REQUIRED)
+find_package(ICUB REQUIRED)
 find_package(Eigen3 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIR})
 
@@ -56,9 +57,9 @@ set_target_properties(${LIBRARY_NAME}  PROPERTIES VERSION ${${VARS_PREFIX}_VERSI
 
 target_include_directories(${LIBRARY_NAME} PUBLIC "$<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>"
                                            "$<INSTALL_INTERFACE:${CMAKE_INSTALL_PREFIX}/${${VARS_PREFIX}_INSTALL_INCLUDEDIR}>"
-                                           ${YARP_INCLUDE_DIRS})
+                                           ${YARP_INCLUDE_DIRS} ${ICUB_INCLUDE_DIRS})
 
-target_link_libraries(${LIBRARY_NAME}  ${YARP_LIBRARIES})
+target_link_libraries(${LIBRARY_NAME}  ${YARP_LIBRARIES} ${ICUB_LIBRARIES})
 
 install(TARGETS ${LIBRARY_NAME}
         EXPORT  ${PROJECT_NAME}
